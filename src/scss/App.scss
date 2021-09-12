@@ -1,0 +1,10 @@
+@import './_reset';
+@import './fonts';
+
+*,*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  
+}

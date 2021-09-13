@@ -53,3 +53,8 @@
     line-height: 39px;
   }
 }
+@media  (max-width:425px) {
+  .title {
+    text-align: left !important;
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import './Login.scss'
 import { useSelector } from 'react-redux';
+import { validate } from '../../helpers/validation';
 
 const Login = ({onCancel,onSubmit}) => {
     const [name,setName]=React.useState('')
@@ -9,12 +10,12 @@ const Login = ({onCancel,onSubmit}) => {
     React.useEffect(() => {
         if (isLoggedIn) onCancel()
     },[isLoggedIn])
+
     const onSubmitHandler = (e) => {
         e.preventDefault()
-        if (password.length<8) {
-            alert('Пароль должен содержать минимум 8 символов')
-        }
-        else onSubmit(name,password)
+        const error = validate(name,password)
+        if (error) alert(error)
+            else onSubmit(name,password)
     }
 
     return (

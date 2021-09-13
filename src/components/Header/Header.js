@@ -9,9 +9,11 @@ const Header = ({onLoginClick,isLoggedIn}) => {
     return (
         <header className='header'>
             <div className="header__inner">
-                <div className="header__logo">
-                    <img alt='logo' src={logo} className="header__logo-img"/>
-                </div>
+                <NavLink to="/">
+                    <div className="header__logo">
+                        <img alt='logo' src={logo} className="header__logo-img"/>
+                    </div>
+                </NavLink>
                 <div className="header__container">
                     <nav className="menu">
                         <ul className="menu__list">

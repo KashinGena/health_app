@@ -4,8 +4,6 @@ import logo from '../../assets/logo.png'
 import { NavLink } from 'react-router-dom';
 
 const Header = ({onLoginClick,isLoggedIn}) => {
-    console.log(isLoggedIn);
-    
     return (
         <header className='header'>
             <div className="header__inner">

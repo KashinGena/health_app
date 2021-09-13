@@ -1,0 +1,19 @@
+@import '../../scss/variables';
+
+.input {
+    margin-bottom: 20px;
+    &__input {
+        width: 100%;
+        padding: 15px 20px;
+        margin-bottom: 15px;
+        border: 1px solid $primary-color;
+        border-radius: 5px;
+    }
+    &__error {
+        font-family: 'Montserrat';
+        color:red;
+        font-size: 12px;
+        margin-top: -12px;
+    }
+}
+

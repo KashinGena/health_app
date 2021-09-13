@@ -1,8 +1,10 @@
 export const validate = (name,password) => {
+    const error = {}
     if (name.length===0)
-        return 'Имя не может быть пустым'
+        error.name= 'Имя не может быть пустым'
     if (password.length===0)
-        return 'Пароль не может быть пустым'
-    if (password.length<8)
-        return 'Пароль должен состоять минимум из 8 символов'
+        error.password = 'Пароль не может быть пустым'
+    else if (password.length<8)
+        error.password = 'Пароль должен состоять минимум из 8 символов'
+    return error
 }

@@ -2,20 +2,42 @@ import React from 'react';
 import './Login.scss'
 import { useSelector } from 'react-redux';
 import { validate } from '../../helpers/validation';
+import Input from '../../components/Input/Input';
 
 const Login = ({onCancel,onSubmit}) => {
-    const [name,setName]=React.useState('')
-    const [password,setPassword]=React.useState('')
+    const [name,setName]=React.useState({touched:false,value:''})
+    const [password,setPassword]=React.useState({touched:false,value:''})
+    const [errors,setErrors]=React.useState({})
     const isLoggedIn = useSelector(state => state.auth.isLoggedIn)
+    const error = useSelector(state => state.auth.error)
+
     React.useEffect(() => {
-        if (isLoggedIn) onCancel()
+        
+        
+        if (isLoggedIn) {
+            console.log('asdf');
+            onCancel()
+        }
     },[isLoggedIn])
 
-    const onSubmitHandler = (e) => {
+    React.useEffect(() => {
+        console.log('уккщк');
+        if (error) setErrors(error)
+    },[error])
+
+    const onSubmitHandler =  (e) => {
         e.preventDefault()
-        const error = validate(name,password)
-        if (error) alert(error)
-            else onSubmit(name,password)
+        setName({...name,touched:true})
+        setPassword({...password,touched:true})
+        const error = validate(name.value,password.value);
+        setErrors(validate(name.value,password.value))
+        if (Object.keys(error).length===0) {
+            console.log(errors);
+            onSubmit(name.value,password.value)
+        } else {
+            setErrors(error)
+        }
+        
     }
 
     return (
@@ -23,17 +45,19 @@ const Login = ({onCancel,onSubmit}) => {
             <div className="auth__inner">
                 <form className="auth__form">
                     <legend className="auth__title">Авторизация</legend>
-                    <input type='text'
-                        className="auth__form-input" 
-                        value={name}
+                    <Input type='text'
+                        touched={name.touched}
+                        error={errors.name}
+                        value={name.value} 
                         placeholder="Логин" 
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={(e) => setName({touched:false,value:e.target.value})}
                     />
-                    <input type='password'
-                        className="auth__form-input" 
-                        value={password} 
+                    <Input type='password'
+                        touched={password.touched}
+                        error={errors.password}
+                        value={password.value} 
                         placeholder="Пароль" 
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={(e) => setPassword({touched:false,value:e.target.value})}
                     />
                     <div className="auth__btn-container">
                         <button onClick={onSubmitHandler}

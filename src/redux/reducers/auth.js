@@ -1,8 +1,8 @@
-import { AUTH_SUCCESS, AUTH_ERROR, LOGOUT } from "../types"
+import { AUTH_SUCCESS, AUTH_ERROR, LOGOUT, AUTH_START } from "../types"
 
 const initialState = {
     isLoggedIn:false,
-    error:'',
+    error:null,
     user:''
 }
 
@@ -13,7 +13,16 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 isLoggedIn:true,
                 user: action.payload,
-                error:''
+                error:null
+
+            }
+        }
+        case (AUTH_START): {
+            return {
+                ...state,
+                isLoggedIn:false,
+                user: '',
+                error:null
 
             }
         }
@@ -29,7 +38,8 @@ const authReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoggedIn:false,
-                user:''
+                user:'',
+                error:null
             }
         }
 

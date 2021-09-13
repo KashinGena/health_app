@@ -2,7 +2,9 @@ import React from 'react';
 import './Header.scss'
 import logo from '../../assets/logo.png'
 
-const Header = () => {
+const Header = ({onLoginClick,isLoggedIn}) => {
+    console.log(isLoggedIn);
+    
     return (
         <header className='header'>
             <div className="header__inner">
@@ -17,7 +19,11 @@ const Header = () => {
                             </li>
                         </ul>
                     </nav>
-                    <button className='header__login-btn'>Войти</button>
+                    <button className='header__login-btn'
+                            onClick={onLoginClick}
+                    >
+                        {isLoggedIn?'Выйти':'Войти'}
+                    </button>
                 </div>
             </div>
         </header>

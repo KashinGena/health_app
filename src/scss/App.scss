@@ -1,5 +1,6 @@
 @import './_reset';
 @import './fonts';
+@import './variables.scss';
 
 *,*::after,
 *::before {
@@ -15,4 +16,15 @@
   font-size: 14px;
   line-height: 22px;
   cursor: pointer;
+}
+
+.btn-login {
+  background-color: $primary-color;
+  color:#fff;
+  margin-right: 10px;
+}
+
+.btn-second {
+  color:$primary-color;
+  border: 1px solid $primary-color;
 }

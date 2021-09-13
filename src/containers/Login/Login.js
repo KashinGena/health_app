@@ -11,17 +11,13 @@ const Login = ({onCancel,onSubmit}) => {
     const isLoggedIn = useSelector(state => state.auth.isLoggedIn)
     const error = useSelector(state => state.auth.error)
 
-    React.useEffect(() => {
-        
-        
+    React.useEffect(() => {      
         if (isLoggedIn) {
-            console.log('asdf');
             onCancel()
         }
     },[isLoggedIn])
 
     React.useEffect(() => {
-        console.log('уккщк');
         if (error) setErrors(error)
     },[error])
 
@@ -32,7 +28,6 @@ const Login = ({onCancel,onSubmit}) => {
         const error = validate(name.value,password.value);
         setErrors(validate(name.value,password.value))
         if (Object.keys(error).length===0) {
-            console.log(errors);
             onSubmit(name.value,password.value)
         } else {
             setErrors(error)

@@ -22,6 +22,9 @@
   background-color: $primary-color;
   color:#fff;
   margin-right: 10px;
+  &:hover{
+    background-color: rgb(233, 49, 33);
+  }
 }
 
 .btn-second {
@@ -33,6 +36,9 @@
   font-weight: bold;
   font-size: 14px;
   line-height: 22px;
+  &:hover{
+    background-color: rgb(250, 189, 183);
+  }
 }
 
 .title {

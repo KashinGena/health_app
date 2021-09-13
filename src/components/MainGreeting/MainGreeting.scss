@@ -1,7 +1,6 @@
 @import '../../scss/variables';
 
 .main {
-
     &__our-service {
         width: 100%;
     }
@@ -15,10 +14,63 @@
             display: inline-block;
             max-width: 328px;
             width: 45%;
+
         }
     }
     &__btn-container {
         margin-bottom: 96px;
+    }
+
+}
+
+@media(max-width:920px) {
+    .main {
+        &__our-service-list {
+            flex-wrap: wrap;
+            & li+li {
+                margin-left: 0px;
+            }
+            & li {
+                margin: 0 20px 20px 0;
+            }
+        }
+
+    }
+}
+
+@media(max-width:768px) {
+    .main{
+        &__our-service-list  {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           
+            & li {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+        &__btn-container {
+            display: flex;
+            justify-content: center;
+        }
+        &__title {
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width:426px) {
+    .main{
+        &__btn-container {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 35px;
+        }
+        &__our-service-list {
+            padding:0 13px;
+            width: 100%;
+        }
     }
 
 }

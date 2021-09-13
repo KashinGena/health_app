@@ -49,6 +49,44 @@
     }
 }
 
+@media (max-width:903px) {
+    .auth {
+        &__login-btn {
+            width: 40%;
+        }
+        &__cancel-btn {
+            width: 40%;
+        } 
+    }
+}
+
+@media (max-width:903px) {
+    .auth {
+        padding: 70px;
+        &__form {
+            width: 70%;
+            padding: 10px 15px;
+        }
+        &__login-btn {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        &__cancel-btn {
+            width: 100%;
+        }
+
+    }
+}
+
+@media (max-width:903px) {
+    .auth {
+        &__form {
+            width: 90%;
+        }
+
+    }
+}
+
 
 
 

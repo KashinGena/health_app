@@ -2,4 +2,21 @@
     &__title {
         margin-top: 45px;
     }
+    @media (max-width:571px) {
+        &__btn-container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+@media (max-width:572px) {
+    .private-office__btn-container {
+        display: flex;
+        flex-direction: column;
+        & button {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+    }
 }

@@ -54,3 +54,20 @@
     }
 }
 
+@media (max-width:768px) {
+    .header{
+        padding: 30px;
+        &__login-btn {
+            padding: 6px 20px;
+        }
+    }
+    .menu {
+        margin-right: 0;
+    }
+}
+
+@media (max-width:426px) {
+    .header{
+        padding: 10px;
+    }
+}

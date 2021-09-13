@@ -45,3 +45,11 @@
   color: $text-color;
   margin-bottom: 35px;
 }
+
+
+@media  (max-width:768px) {
+  .title {
+    font-size: 28px;
+    line-height: 39px;
+  }
+}

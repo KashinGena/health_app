@@ -1,0 +1,35 @@
+@import '/src/scss/variables';
+
+.our-service-item {
+    padding: 35px 40px;
+    box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+    font-family: 'Montserrat';
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    &__img {
+        width: 72px;
+        height: 72px;
+        margin-bottom: 20px;
+    }
+    &__title {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    &__line {
+        width: 50px;
+        height: 2px;
+        background-color: $danger-color;
+        margin-bottom: 20px;
+    }
+    &__text {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        color:#737373;
+    }
+}

@@ -1,0 +1,46 @@
+@import '../../scss/variables';
+
+.main {
+    display: flex;
+    margin: 0 197px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 0;
+    &__title {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 58px;
+        line-height: 80px;
+        letter-spacing: 0.2px;
+        color: $text-color;
+        margin-bottom: 35px;
+    }
+    &__our-service {
+        width: 100%;
+    }
+    &__our-service-list {
+        display: flex;
+        width: 100%;
+        & li+li {
+            margin-left: 30px;
+        }
+        & li {
+            display: inline-block;
+            max-width: 328px;
+            width: 45%;
+        }
+    }
+    &__btn-container {
+        margin-bottom: 96px;
+    }
+    &__login-btn {
+        background-color: $primary-color;
+        color:#fff;
+        margin-right: 10px;
+    }
+    &__contacts-btn {
+        color:$primary-color;
+        border: 1px solid $primary-color;
+    }
+}

@@ -16,9 +16,9 @@ const MainGreeting = () => {
 
     return (
         <div className="main">
-            <p className="main__title">
+            <h1 className="main__title title">
             Место для получения медицинской помощи
-            </p>
+            </h1>
             <div className="main__btn-container">
                 <button className="main__login-btn main-btn btn-login">Войти</button>
                 <button className="main__contacts-btn main-btn btn-second">Контакты</button>

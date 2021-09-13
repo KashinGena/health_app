@@ -36,13 +36,16 @@
         align-items: center;
         &-item {
             padding: 10px;
-            font-family: 'Open Sanf';
-            font-weight: 600;
-            font-size: 15px;
             cursor: pointer;
-            line-height: 24px;
-            letter-spacing: .2px;
-            color:#737373;
+            &-link {
+                font-family: 'Open Sanf';
+                font-weight: 600;
+                font-size: 15px;
+                text-decoration: none;
+                line-height: 24px;
+                letter-spacing: .2px;
+                color:#737373;
+            }
             &:hover {
                 padding-bottom: 9px;
                 border-bottom: 1px solid #737373;

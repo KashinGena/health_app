@@ -27,15 +27,21 @@
 .btn-second {
   color:$primary-color;
   border: 1px solid $primary-color;
+  text-decoration: none;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 22px;
 }
 
 .title {
   font-family: Montserrat;
-font-style: normal;
-font-weight: bold;
-font-size: 58px;
-line-height: 80px;
-letter-spacing: 0.2px;
-color: $text-color;
-margin-bottom: 35px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 58px;
+  line-height: 80px;
+  letter-spacing: 0.2px;
+  color: $text-color;
+  margin-bottom: 35px;
 }

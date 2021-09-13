@@ -1,24 +1,25 @@
 import React from 'react';
+import './PrivateOffice.scss'
+import { NavLink } from 'react-router-dom';
 
-const PrivateOffice = ({user}) => {
-    console.log(user);
-    
+const PrivateOffice = ({user,onLogout}) => {
     return (
         <div>
-            <h1 className="contacts__title title">
+            <h1 className="private-office__title title">
                 Привет, {user}
             </h1>
-            <div className="contacts__btn-container">
+            <div className="private-office__btn-container">
                 <button
+                    onClick={onLogout}
                     className="main__login-btn main-btn btn-login"
                 >
                     Выйти из аккаунта
                 </button>
-                <button
+                <NavLink to="/contacts"
                     className="main__contacts-btn main-btn btn-second"
                 >
                     Перейти в контакты
-                </button>
+                </NavLink>
             </div> 
         </div>
     );

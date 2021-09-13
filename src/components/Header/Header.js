@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.scss'
 import logo from '../../assets/logo.png'
+import { NavLink } from 'react-router-dom';
 
 const Header = ({onLoginClick,isLoggedIn}) => {
     console.log(isLoggedIn);
@@ -14,9 +15,14 @@ const Header = ({onLoginClick,isLoggedIn}) => {
                 <div className="header__container">
                     <nav className="menu">
                         <ul className="menu__list">
-                            <li className="menu__list-item">
-                                Контакты
-                            </li>
+                                <li className="menu__list-item">
+                                    <NavLink to="/contacts"
+                                        className="menu__list-item-link"
+                                    >
+                                        Контакты
+                                    </NavLink>
+                                </li>
+                            
                         </ul>
                     </nav>
                     <button className='header__login-btn'

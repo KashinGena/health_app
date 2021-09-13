@@ -1,25 +1,14 @@
 import React from 'react';
+import './Contacts.scss'
 
-const PrivateOffice = ({name}) => {
+const Contacts = () => {
     return (
         <div>
             <h1 className="contacts__title title">
-                Привет, {name}
+                Контакты
             </h1>
-            <div className="contacts__btn-container">
-                <button
-                    className="main__login-btn main-btn btn-login"
-                >
-                    Выйти из аккаунта
-                </button>
-                <button
-                    className="main__contacts-btn main-btn btn-second"
-                >
-                    Перейти в контакты
-                </button>
-            </div> 
         </div>
     );
 };
 
-export default PrivateOffice;
+export default Contacts;

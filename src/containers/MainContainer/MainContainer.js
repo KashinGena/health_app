@@ -3,9 +3,11 @@ import  './MainContainer.scss'
 import { useSelector, useDispatch } from 'react-redux';
 import Header from '../../components/Header/Header'
 import {autoAuth, logout, auth} from '../../redux/actions/auth'
-import MainGreeting from '../../components/MainGreeting/MainGreeting';
 import Login from '../Login/Login'
-import PrivateOffice from '../../containers/PrivateOffice/PrivateOffice'
+import Contacts from '../../components/Contacts/Contacts';
+import PrivateOffice from '../../components/PrivateOffice/PrivateOffice';
+import MainGreeting from '../../components/MainGreeting/MainGreeting';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 const MainContainer = () => {
     const dispatch = useDispatch()
@@ -22,21 +24,30 @@ const MainContainer = () => {
     }
 
     const onLoginClickHandler = () => {
-        console.log(isLoggedIn);
-        
         if (isLoggedIn) dispatch(logout())
             else setModalOpen(true)
-        console.log(isModalOpened);
-        
     }
     return (
         <div>
-            <Header name={user}
-                    onLoginClick={onLoginClickHandler}
+            <Header onLoginClick={onLoginClickHandler}
                     isLoggedIn={isLoggedIn}
             />
             <div className="main">
-                {!isLoggedIn?<MainGreeting/>:<PrivateOffice user={user}/>}
+                <Switch>
+                    <Route exact path="/">
+                        {isLoggedIn?
+                            <PrivateOffice user={user}
+                                            onLogout={onLoginClickHandler}
+                            />
+                        :
+                        <MainGreeting
+                            onLogin={onLoginClickHandler}
+                        />}
+                    </Route>
+                    <Route exact path='/contacts'>
+                        {isLoggedIn?<Contacts/>:<Redirect to="/"/>}
+                    </Route>
+                </Switch>
             </div>
             {isModalOpened?
                 <Login onSubmit={onSubmitHandler}
